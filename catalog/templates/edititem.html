@@ -1,0 +1,33 @@
+{% include 'nav.html' %}
+<div class="main">
+{% block content %}
+
+<div class="">
+		<div class="mr-sm-2 mb-2 col-sm-8" style="margin: 10px;">
+			<form action="{{ url_for('edititem',saintfransis=saintfransis,francis=itemdetails.itemname)}}" method="POST">
+				<div class="panel panel-info" style="border-radius:22px;">
+				  <div class="panel-heading" style="background-color:#006666; border-radius:78px; color:white;">Edit Bag Details</div>
+				  <div class="panel-body">
+				  	
+					  <div class="form-group">
+					  	<label class="text-primary" for="name" style="color:black;">Enter Bag Name:</label>
+					    <input type="name" class="form-control" name="itemname" value="{{itemdetails.itemname}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="year" style="color:black;">Enter description of bag:</label>
+					    <input type="text" class="form-control" name="description" value="{{itemdetails.description}}">
+					  </div>
+					  <div class="form-group">
+					  	<label class="text-primary" for="color" style="color:black;">Enter Bag price:</label>
+					    <input type="text" class="form-control" name="price" value="{{itemdetails.price}}">
+					  </div>
+					  <div class="text-primary" class="form-group">
+					  	<label for="cc" style="color:black;">Enter rating:</label>
+					    <input type="text" class="form-control" name="rating" value="{{itemdetails.rating}}">
+					  </div>				   
+				  <div class="panel-footer text-center" style="border-radius:104px;"><input type="submit" class="btn btn-primary" style="background-color:#006666; border-radius:105px;" value="Edit"></div>
+				</div>
+				</form>
+			</div>
+</div>
+{% endblock content %}
